@@ -22,6 +22,7 @@ import com.google.common.collect.Iterators;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -61,13 +62,13 @@ public class StepDefs {
 		
 	}
 
-	@Given("User Navigated to the landing page of the application")
+	@When("User Navigated to the landing page of the application")
 	public void user_navigated_to_the_landing_page_of_the_application() {
 		landingPageObjects1.invokedToTheLandinPage(url);
 		scn.log("User Navigated to the landing page of the application");
 	}
 
-	@When("User search for the product {string}")
+	@And("User search for the product {string}")
 	public void user_search_for_the_product(String product) {
 		landingPageObjects1.SearchForProduct(product);
 		scn.log("User search for the product");
@@ -78,7 +79,7 @@ public class StepDefs {
 		productListingPage.SearchProductConfirmation(product);
 	}
 
-	@When("User click on any product")
+	@And("User click on any product")
 	public void user_click_on_any_product() {
 		productListingPage.ClickingOnAnyProduct();
 		scn.log("User click on any product");
